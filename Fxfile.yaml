@@ -36,5 +36,5 @@ jobs:
     tags:
       - V1
     regions: FxLabs/US_WEST_1
-    cron: '0 30 * ? * *'
+    #cron: '0 30 * ? * *'
     #issueTracker: FxLabs/Fx-GitHub-Test

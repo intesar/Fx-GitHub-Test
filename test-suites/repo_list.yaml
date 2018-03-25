@@ -4,7 +4,9 @@
 authors:
   - Intesar Shannan Mohammed
 
-endpoint: /orgs/intesar/repos
+endpoint: /orgs/intesar/repos?client_id=6bf8c418a45b2d7d5acb&client_secret={{@Vault.FxLabs/GitHub-OAuth-Secret}}
+
+auth: NONE
 
 method: GET
 
