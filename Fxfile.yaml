@@ -1,0 +1,40 @@
+
+---
+version: '1'
+
+# App (Project) name
+name: Fx-GitHub-Test
+
+# App description
+description: GitHub API Test Sample
+
+# license
+licenses:
+  - APACHE LICENSE, VERSION 2.
+
+# App environments
+environments:
+  - name: GitHub.com
+    baseUrl: https://api.github.com
+    # app access credentials
+    auths:
+      - name: Default
+        authType: OAuth_2_0
+        clientId: 6bf8c418a45b2d7d5acb
+        clientSecret: '{{@Vault.FxLabs/GitHub-OAuth-Secret}}'
+        id: github
+        accessTokenUri: https://github.com/login/oauth/access_token
+        userAuthorizationUri: https://github.com/login/oauth/authorize
+        clientAuthenticationScheme: form
+        scope: read,write
+        grantType: password
+
+# Job profiles
+jobs:
+  - name: GitHub.com
+    environment: GitHub.com
+    tags:
+      - V1
+    regions: FxLabs/US_WEST_1
+    cron: '0 30 * ? * *'
+    #issueTracker: FxLabs/Fx-GitHub-Test
